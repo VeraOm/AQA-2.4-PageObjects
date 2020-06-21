@@ -3,7 +3,8 @@ package ru.netology.data;
 import lombok.Value;
 
 public class DataHelper {
-    private DataHelper() {}
+    private DataHelper() {
+    }
 
     @Value
     public static class AuthInfo {
@@ -39,16 +40,16 @@ public class DataHelper {
     }
 
     @Value
-    public static class MoneyTransferInfo{
+    public static class MoneyTransferInfo {
         private String refillAmount;
         private String senderCardNumber;
     }
 
-    public static MoneyTransferInfo getMoneyTransferInfo(String senderCardNumber, long refillAmount){
+    public static MoneyTransferInfo getMoneyTransferInfo(String senderCardNumber, long refillAmount) {
         return new MoneyTransferInfo(Long.toString(refillAmount), senderCardNumber);
     }
 
-    public static MoneyTransferInfo getInvalidMoneyTransferInfo(long refillAmount){
+    public static MoneyTransferInfo getInvalidMoneyTransferInfo(long refillAmount) {
         return new MoneyTransferInfo(Long.toString(refillAmount), "6559 0000 0000 0006");
     }
 

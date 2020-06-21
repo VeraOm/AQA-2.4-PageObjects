@@ -11,7 +11,7 @@ public class LoginPage {
     private SelenideElement passwordField = $("[data-test-id=password] input");
     private SelenideElement loginButton = $("[data-test-id=action-login]");
 
-    public LoginPage(){
+    public LoginPage() {
         open("http://localhost:9999");
     }
 

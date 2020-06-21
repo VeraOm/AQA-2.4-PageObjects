@@ -87,10 +87,10 @@ public class MoneyTransferTest {
         moneyTransferPage.refillAction(moneyTransferInfo);
         dashboardPage.updateAmounts();
 
-        boolean testAmounts = dashboardPage.getSecondCardSum()>=0
-                && dashboardPage.getSecondCardSum()<=totalAmount
-                && dashboardPage.getFirstCardSum()>=0
-                && dashboardPage.getFirstCardSum()<=totalAmount;
+        boolean testAmounts = dashboardPage.getSecondCardSum() >= 0
+                && dashboardPage.getSecondCardSum() <= totalAmount
+                && dashboardPage.getFirstCardSum() >= 0
+                && dashboardPage.getFirstCardSum() <= totalAmount;
 
         Assertions.assertTrue(testAmounts);
     }

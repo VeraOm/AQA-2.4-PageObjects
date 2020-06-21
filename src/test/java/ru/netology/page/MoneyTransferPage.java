@@ -21,24 +21,24 @@ public class MoneyTransferPage {
 
     public MoneyTransferPage(String recipientCardNumber, long startRecipientAmount, long startSenderAmount) {
         amountField.shouldBe(visible);
-        this.recipientCardNumber=recipientCardNumber;
-        this.startRecipientAmount=startRecipientAmount;
-        this.startSenderAmount=startSenderAmount;
+        this.recipientCardNumber = recipientCardNumber;
+        this.startRecipientAmount = startRecipientAmount;
+        this.startSenderAmount = startSenderAmount;
     }
 
-    public long getRecipientAmount(){
+    public long getRecipientAmount() {
         return recipientAmount;
     }
 
-    public long getSenderAmount(){
+    public long getSenderAmount() {
         return senderAmount;
     }
 
-    public long getStartRecipientAmount(){
+    public long getStartRecipientAmount() {
         return startRecipientAmount;
     }
 
-    public long getStartSenderAmount(){
+    public long getStartSenderAmount() {
         return startSenderAmount;
     }
 
@@ -46,13 +46,13 @@ public class MoneyTransferPage {
         amountField.setValue(moneyTransferInfo.getRefillAmount());
         fromCardField.setValue(moneyTransferInfo.getSenderCardNumber());
 
-        refillAmount=Long.parseLong(moneyTransferInfo.getRefillAmount());
-        recipientAmount=startRecipientAmount+refillAmount;
-        senderAmount=startSenderAmount-refillAmount;
+        refillAmount = Long.parseLong(moneyTransferInfo.getRefillAmount());
+        recipientAmount = startRecipientAmount + refillAmount;
+        senderAmount = startSenderAmount - refillAmount;
         refillButton.click();
     }
 
-    public void refillActionError(DataHelper.MoneyTransferInfo moneyTransferInfo){
+    public void refillActionError(DataHelper.MoneyTransferInfo moneyTransferInfo) {
         amountField.setValue(moneyTransferInfo.getRefillAmount());
         fromCardField.setValue(moneyTransferInfo.getSenderCardNumber());
         refillButton.click();
